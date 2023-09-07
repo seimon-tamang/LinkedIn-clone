@@ -1,14 +1,14 @@
 .header{
     position: sticky;
     top:0;
-
     display:flex;
     justify-content: space-evenly;
     border-bottom: 0.1px solid lightgray;
     padding-top: 10px;
     padding-bottom: 2px;
     width:100%;
-    z-index:999;
+    z-index :999;
+    background-color: #f3f2ef;
 }
 
 .header_left{
