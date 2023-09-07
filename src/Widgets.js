@@ -26,8 +26,10 @@ function Widgets() {
         <h2> LinkedIn News</h2>
         <InfoIcon/>
        </div>
-       {newsArticle("SEIMON creates first React App", "TOP NEWS - 832 readers")}
-       {newsArticle("Elon Musk lands a car on the moon", "People going wild over this...")}
+       {newsArticle("Room Temperature SuperConductor (LK_99) not ...", "TOP NEWS - 8321 readers")}
+       {newsArticle("Elon Musk lands a car on the moon....", "TOP NEWS - 12,352 readers")}
+       {newsArticle("I hope this works - Seimon", "TOP NEWS - 352 readers")}
+       {newsArticle("Apple Expected to Use Own Modem Chip -", "TOP NEWS - 7,352 readers")}
     </div>
   )
 }
