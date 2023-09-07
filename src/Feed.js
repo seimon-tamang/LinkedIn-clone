@@ -21,9 +21,12 @@ import {
     orderBy
 } from "firebase/firestore";
 import {db,auth} from './Firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 
 
 function Feed() {
+ const user = useSelector(selectUser);
  const [input, setInput] = useState("")
  const [posts, setPosts] = useState([]);
 
@@ -39,7 +42,7 @@ function Feed() {
             postArray.push({...doc.data(), id:doc.id}) )
         )
         setPosts([...posts,...postArray]);
-        console.log(posts);
+        
     })
 
 
@@ -49,10 +52,10 @@ function Feed() {
     e.preventDefault();
 
     addDoc(postsRef,{
-        name:"Seimon Moktan",
-        description: "This is a test",
+        name:user.displayName,
+        description: user.email,
         message:input,
-        photoUrl:"",
+        photoUrl:user.photoUrl || "",
         timestamp:serverTimestamp(),
     })
 
@@ -109,6 +112,7 @@ function Feed() {
                     name={name}
                     description={description}
                     message={message}
+                    photoUrl = {photoUrl}
                     />
             )
             )

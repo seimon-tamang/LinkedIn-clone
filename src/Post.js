@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {forwardRef} from 'react'
 import "./Post.css"
 import InputOption from './InputOption';
 import Avatar from '@mui/material/Avatar';
@@ -7,11 +7,11 @@ import CommentIcon from '@mui/icons-material/Comment';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import SendIcon from '@mui/icons-material/Send';
 
-function Post({ name, description, message, photoUrl }) {
+const Post = ({ name, description, message, photoUrl }) => {
   return (
-    <div className="post">
+    <div  className="post">
         <div className="post_header">
-             <Avatar />
+             <Avatar src = {photoUrl}>{name[0]}</Avatar>
             <div className="post_info">
                  
                 <h2>{name}</h2>
