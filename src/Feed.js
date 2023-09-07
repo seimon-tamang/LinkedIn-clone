@@ -8,6 +8,7 @@ import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import ArticleIcon from '@mui/icons-material/Article';
 import InputOption from './InputOption';
 import Post from "./Post"
+import FlipMove from 'react-flip-move';
 import {
     doc,
     onSnapshot,
@@ -102,21 +103,24 @@ function Feed() {
                 />
             </div>
         </div>
-
+        <FlipMove>
         {
+            
             posts.map(
-                ({id,name,description,message,photoUrl}
-                )=>(
-                    <Post 
-                    key={id}
-                    name={name}
-                    description={description}
-                    message={message}
-                    photoUrl = {photoUrl}
-                    />
-            )
-            )
-        }
+               ({id,name,description,message,photoUrl}
+               )=>(
+                   <Post 
+                   key={id}
+                   name={name}
+                   description={description}
+                   message={message}
+                   photoUrl = {photoUrl}
+                   />
+           )
+           )
+       }
+        </FlipMove>
+        
 
         
 

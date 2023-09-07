@@ -7,9 +7,9 @@ import CommentIcon from '@mui/icons-material/Comment';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import SendIcon from '@mui/icons-material/Send';
 
-const Post = ({ name, description, message, photoUrl }) => {
+const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
   return (
-    <div  className="post">
+    <div ref = {ref}className="post">
         <div className="post_header">
              <Avatar src = {photoUrl}>{name[0]}</Avatar>
             <div className="post_info">
@@ -42,6 +42,6 @@ const Post = ({ name, description, message, photoUrl }) => {
         
     </div>
   )
-}
+})
 
 export default Post
